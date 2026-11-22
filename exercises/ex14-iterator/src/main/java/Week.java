@@ -38,10 +38,26 @@ public class Week implements Iterable<String> {
     //       order. The usual approach is a small (nested) class that implements
     //       Iterator<String>:
     //         - hasNext() reports whether any days remain;
-    //         - next() returns the next day and advances, or throws
-    //           java.util.NoSuchElementException if none remain.
+    //         - next() returns the next day and advances, or throws java.util.NoSuchElementException if none remain.
     //       Replace the empty iterator below with an instance of your class.
-    return Collections.emptyIterator();
+    return new DayIterator();
+  }
+
+  public class DayIterator implements Iterator<String> {
+    int  index_now = 0;
+
+    @Override
+    public boolean hasNext(){
+      return index_now < days.length;
+    }
+
+    @Override
+    public String next(){
+      if (hasNext()){
+        return getDay(index_now++);
+      }
+      throw new java.util.NoSuchElementException();
+    }
   }
 
   /** Prints each day of the week, one per line. */
