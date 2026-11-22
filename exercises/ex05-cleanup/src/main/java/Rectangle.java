@@ -1,6 +1,4 @@
-/**
- * Created a rectangle.
- */
+/** Creates a rectangle. */
 public class Rectangle {
   private double width;
   private double height;
@@ -17,8 +15,7 @@ public class Rectangle {
   }
 
   /**
-   * Calculates the area of a rectangle.
-   * Returns width * height.
+   * Calculates the area of a rectangle. Returns width * height.
    *
    * @return the area of the rectangle.
    */
